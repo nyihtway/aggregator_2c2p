@@ -1,15 +1,12 @@
-﻿using _2C2P.DEMO.AGGREGATOR.Services;
+﻿using _2C2P.DEMO.Aggregator.Services;
 using _2C2P.DEMO.Infrastructure;
 using Autofac;
 using MongoDB.Bson.Serialization.Conventions;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
-namespace _2C2P.DEMO.AGGREGATOR.AutofacModules
+namespace _2C2P.DEMO.Aggregator.AutofacModules
 {
     public class InfrastructureModule : Autofac.Module
     {

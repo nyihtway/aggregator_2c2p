@@ -1,23 +1,19 @@
-using _2C2P.DEMO.AGGREGATOR.AutofacModules;
-using _2C2P.DEMO.AGGREGATOR.BackgroundServices;
-using _2C2P.DEMO.AGGREGATOR.Services.Kafka;
+using _2C2P.DEMO.Aggregator.AutofacModules;
+using _2C2P.DEMO.Aggregator.BackgroundServices;
+using _2C2P.DEMO.Aggregator.Services.Kafka;
 using _2C2P.DEMO.Infrastructure.AutoMapper;
 using Autofac;
 using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MongoDB.Driver;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Serilog;
 
-namespace _2C2P.DEMO.AGGREGATOR
+namespace _2C2P.DEMO.Aggregator
 {
     public class Startup
     {
@@ -75,6 +71,8 @@ namespace _2C2P.DEMO.AGGREGATOR
             }
 
             app.UseRouting();
+
+            app.UseSerilogRequestLogging();
 
             app.UseEndpoints(endpoints =>
             {

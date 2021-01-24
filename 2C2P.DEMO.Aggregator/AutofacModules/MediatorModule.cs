@@ -1,10 +1,6 @@
 ﻿using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace _2C2P.DEMO.AGGREGATOR.AutofacModules
+namespace _2C2P.DEMO.Aggregator.AutofacModules
 {
     public class MediatorModule : Autofac.Module
     {

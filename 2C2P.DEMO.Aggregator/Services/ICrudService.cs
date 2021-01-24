@@ -1,11 +1,11 @@
-﻿using System;
+﻿using _2C2P.DEMO.Domain.Models;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace _2C2P.DEMO.AGGREGATOR.Services
+namespace _2C2P.DEMO.Aggregator.Services
 {
     public interface ICrudService
     {
+        Task<bool> InsertTransactions(List<Transaction> documents);
     }
 }

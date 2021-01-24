@@ -1,11 +1,11 @@
-﻿using System;
+﻿using _2C2P.DEMO.Domain.Events;
+using _2C2P.DEMO.Infrastructure.Kafka;
 using Confluent.Kafka;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using _2C2P.DEMO.Domain.Events;
-using _2C2P.DEMO.Infrastructure.Kafka;
+using System;
 
-namespace _2C2P.DEMO.AGGREGATOR.Services.Kafka
+namespace _2C2P.DEMO.Aggregator.Services.Kafka
 {
     public static class ServiceCollectionExtensions
     {
