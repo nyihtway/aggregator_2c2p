@@ -21,5 +21,12 @@ namespace _2C2P.DEMO.Aggregator.Services
 
             return true;
         }
+
+        public async Task<bool> InsertTransaction(Transaction document)
+        {
+            await _transRepo.Insert(document);
+
+            return true;
+        }
     }
 }

@@ -1,5 +1,7 @@
 using _2C2P.DEMO.Aggregator.AutofacModules;
 using _2C2P.DEMO.Aggregator.BackgroundServices;
+using _2C2P.DEMO.Aggregator.MiddleWares.Jaeger;
+using _2C2P.DEMO.Aggregator.Services.Jaeger;
 using _2C2P.DEMO.Aggregator.Services.Kafka;
 using _2C2P.DEMO.Infrastructure.AutoMapper;
 using Autofac;
@@ -37,6 +39,7 @@ namespace _2C2P.DEMO.Aggregator
                 .AddHttpContextAccessor();
 
             services.AddKafka();
+            services.AddJaeger();
 
             var mappingConfig = new MapperConfiguration(cfg =>
             {
@@ -71,6 +74,7 @@ namespace _2C2P.DEMO.Aggregator
             }
 
             app.UseRouting();
+            app.UseJaeger();
 
             app.UseSerilogRequestLogging();
 
