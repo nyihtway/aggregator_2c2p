@@ -14,12 +14,10 @@ namespace _2C2P.DEMO.Aggregator.EventHandlers
     {
         private readonly ILogger _logger;
         private readonly ICrudService _crudService;
-        private readonly IMapper _mapper;
 
-        public TransactionEventHandler(ICrudService crudService, IMapper mapper)
+        public TransactionEventHandler(ICrudService crudService)
         {
             _crudService = crudService ?? throw new ArgumentNullException(nameof(crudService));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _logger = Log.ForContext<TransactionEventHandler>();
         }
 
@@ -29,11 +27,20 @@ namespace _2C2P.DEMO.Aggregator.EventHandlers
             {
                 if (transaction != null)
                 {
-                    var documents = _mapper.Map<Transaction>(transaction);
+                    var documents = new Transaction()
+                    {
+                        Id = transaction.Id,
+                        TransactionId = transaction.TransactionId,
+                        Amount = transaction.Amount,
+                        CurrencyCode = transaction.CurrencyCode,
+                        TransactionDate = transaction.TransactionDate,
+                        Status = transaction.Status
+                    };
+
                     await _crudService.InsertTransaction(documents);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;

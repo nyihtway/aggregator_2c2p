@@ -41,14 +41,6 @@ namespace _2C2P.DEMO.Aggregator
             services.AddKafka();
             services.AddJaeger();
 
-            var mappingConfig = new MapperConfiguration(cfg =>
-            {
-                cfg.AllowNullCollections = true;
-                cfg.AddProfile<MappingProfile>();
-            });
-
-            services.AddSingleton(mappingConfig.CreateMapper());
-
             services.AddHostedService<TransactionSubscriberService>();
 
             services.AddMediatR(typeof(Startup).Assembly);
