@@ -1,7 +1,4 @@
 ﻿using _2C2P.DEMO.Domain.Events;
-using _2C2P.DEMO.Domain.Models;
-using _2C2P.DEMO.Infrastructure.Interfaces;
-using AutoMapper;
 using MediatR;
 using System;
 

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using OpenTracing;
 using OpenTracing.Tag;
+using System;
+using System.Threading.Tasks;
 
 namespace _2C2P.DEMO.Aggregator.MiddleWares.Jaeger
 {
