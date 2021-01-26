@@ -1,7 +1,6 @@
 ﻿using _2C2P.DEMO.Aggregator.Models;
 using _2C2P.DEMO.Aggregator.Services;
 using _2C2P.DEMO.Domain.Models;
-using AutoMapper;
 using MediatR;
 using Serilog;
 using System;
