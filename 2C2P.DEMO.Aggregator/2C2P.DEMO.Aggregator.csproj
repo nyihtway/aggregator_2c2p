@@ -9,23 +9,17 @@
     <PackageReference Include="Autofac" Version="6.1.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="Confluent.Kafka" Version="1.5.3" />
     <PackageReference Include="Jaeger" Version="0.4.2" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.11.6" />
     <PackageReference Include="OpenTracing.Contrib.NetCore" Version="0.6.2" />
     <PackageReference Include="Serilog" Version="2.10.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="2C2P.DEMO.Domain">
-      <HintPath>..\2C2P.DEMO.Domain.dll</HintPath>
-    </Reference>
-    <Reference Include="2C2P.DEMO.Infrastructure">
-      <HintPath>..\2C2P.DEMO.Infrastructure.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\repo_2c2p\2C2P.DEMO.Domain\2C2P.DEMO.Domain.csproj" />
+    <ProjectReference Include="..\..\repo_2c2p\2C2P.DEMO.Infrastructure\2C2P.DEMO.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

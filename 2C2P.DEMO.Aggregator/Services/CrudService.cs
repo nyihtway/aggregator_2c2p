@@ -15,7 +15,7 @@ namespace _2C2P.DEMO.Aggregator.Services
             _transRepo = transRepo ?? throw new ArgumentNullException(nameof(transRepo));
         }
 
-        public async Task<bool> InsertTransactions(List<Transaction> documents)
+        public async Task<bool> InsertTransactions(IEnumerable<Transaction> documents)
         {
             await _transRepo.InsertMany(documents);
 

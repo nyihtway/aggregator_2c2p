@@ -10,6 +10,7 @@ namespace _2C2P.DEMO.Aggregator.AutofacModules
         protected override void Load(ContainerBuilder builder)
         {
             var runningAssemblies = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.GetName().Name.Contains("2C2P.DEMO."));
+            
             foreach (var assembly in runningAssemblies)
             {
                 var types = assembly.GetExportedTypes()

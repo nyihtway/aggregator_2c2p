@@ -7,6 +7,6 @@ namespace _2C2P.DEMO.Aggregator.Services
     public interface ICrudService
     {
         Task<bool> InsertTransaction(Transaction document);
-        Task<bool> InsertTransactions(List<Transaction> documents);
+        Task<bool> InsertTransactions(IEnumerable<Transaction> documents);
     }
 }

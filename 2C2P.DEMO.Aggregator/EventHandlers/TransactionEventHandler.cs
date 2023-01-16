@@ -20,23 +20,13 @@ namespace _2C2P.DEMO.Aggregator.EventHandlers
             _logger = Log.ForContext<TransactionEventHandler>();
         }
 
-        public async Task Handle(TransactionEvent transaction, CancellationToken cancellationToken)
+        public async Task Handle(TransactionEvent tEvent, CancellationToken cancellationToken)
         {
             try
             {
-                if (transaction != null)
+                if (tEvent != null)
                 {
-                    var documents = new Transaction()
-                    {
-                        Id = transaction.Id,
-                        TransactionId = transaction.TransactionId,
-                        Amount = transaction.Amount,
-                        CurrencyCode = transaction.CurrencyCode,
-                        TransactionDate = transaction.TransactionDate,
-                        Status = transaction.Status
-                    };
-
-                    await _crudService.InsertTransaction(documents);
+                    await _crudService.InsertTransactions(tEvent.Transactions);
                 }
             }
             catch (Exception ex)
